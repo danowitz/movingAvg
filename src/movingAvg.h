@@ -9,11 +9,16 @@
 class movingAvg
 {
     public:
+        movingAvg()
+            : m_interval(10), m_nbrReadings(0), m_sum(0), m_next(0) {}
         movingAvg(int interval)
             : m_interval(interval), m_nbrReadings(0), m_sum(0), m_next(0) {}
         void begin();
         int reading(int newReading);
+        float reading(float newReading);
+        float getAvgf();
         int getAvg();
+        
         int getCount() {return m_nbrReadings;}
         void reset();
 
@@ -23,5 +28,6 @@ class movingAvg
         long m_sum;         // sum of the m_readings array
         int m_next;         // index to the next reading
         int *m_readings;    // pointer to the dynamically allocated interval array
+    
 };
 #endif
