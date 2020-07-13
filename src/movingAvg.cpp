@@ -41,12 +41,6 @@ int movingAvg::reading(int newReading)
 // just return the current moving average
 int movingAvg::getAvg()
 {
-    return (m_sum + m_nbrReadings / 2) / m_nbrReadings;
-}
-
-// just return the current moving average
-int movingAvg::getAvg()
-{
     if(m_nbrReadings > 0) {
         return (m_sum + m_nbrReadings / 2) / m_nbrReadings;
     } else {
